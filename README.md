@@ -4,4 +4,4 @@ Welcome to my portfolio!\
 [Also check out my projects](https://github.com/parkerhendry/projects)
 # Contact
 #### Parker Hendry
-#### hendryp2@winthrop.edu
+#### parkerhendry1@gmail.com

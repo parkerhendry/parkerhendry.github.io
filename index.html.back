@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Parker Hendry's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">	
+						<div class="content">
+							<div class="inner">
+								<h1>Parker Hendry</h1>
+								<p>Software Developer - AI Trainer at DataAnnotationTech</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#about">About</a></li>
+								<li><a href="Resume.pdf">Resume</a></li>
+								<li><a href="#contact">Contact</a></li>
+								
+							</ul>
+						</nav>
+						
+						<nav>
+						
+							<ul>
+							
+								<li><a href="https://github.com/parkerhendry/projects" class="icon brands fa-github"> Projects</a></li>
+							
+							</ul>
+						
+						</nav>
+					</header>
+
+
+					<div id="main">
+
+						<!-- About Section -->
+							<article id="about">
+								<h2 class="major">About</h2>
+
+								<span class="image main"><img src="images/new.jpeg" alt="" /></span>
+								
+								<!--<span><img src="https://twemoji.maxcdn.com/v/latest/svg/1f44b.svg" width="25" height="25" alt="👋" loading="lazy"></span>-->
+								<span>Hi!</span>
+								<p>My name is Parker Hendry, and I'm a software developer! With a deep-seated passion for Computer Science and Mathematics—my major and minor—I'm currently pursuing my dream.</p>
+								<p>To learn more about my skills and qualifications, check out my <a href="Resume.pdf">resume</a>.</p>
+								<p>Here are some examples of <a href="https://github.com/parkerhendry/projects">projects that I have completed</a>.</p>
+							</article>
+
+
+						<!-- Contact Information -->
+						<article id="contact">
+						
+										<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Type</th>
+													<th>Info</th>
+													
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Email</td>
+													<td>parkerhendry1@gmail.com</td>
+													
+												</tr>
+												<tr>
+													<td>Phone</td>
+													<td>803-280-7996</td>
+													
+												</tr>
+																								<tr>
+													<td>GitHub</td>
+													<td>parkerhendry</td>
+													
+												</tr>
+												<tr>
+													<td>Handshake Profile</td>
+													<td><a href="https://app.joinhandshake.com/stu/users/33789239">Click Me</a></td>
+													
+												</tr>	
+												<tr>
+													<td>LinkedIn Profile</td>
+													<td><a href="https://www.linkedin.com/in/parker-hendry-a53715287">Click Me</a></td>
+													
+												</tr>											
+											</tbody>
+										</table>
+										</div>					
+						
+						</article>
+
+					</div>
+
+					<footer>
+					</footer>
+
+			</div>
+
+		<!--Background -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

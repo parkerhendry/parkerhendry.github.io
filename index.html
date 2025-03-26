@@ -1,122 +1,438 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Parker Hendry's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parker Hendry - Software Developer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Animate.css for animations -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --dark-color: #34495e;
+            --light-color: #ecf0f1;
+        }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f4f6f7;
+        }
 
-				<!-- Header -->
-					<header id="header">	
-						<div class="content">
-							<div class="inner">
-								<h1>Parker Hendry</h1>
-								<p>Software Developer - AI Trainer at DataAnnotationTech</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#about">About</a></li>
-								<li><a href="Resume.pdf">Resume</a></li>
-								<li><a href="#contact">Contact</a></li>
-								
-							</ul>
-						</nav>
-						
-						<nav>
-						
-							<ul>
-							
-								<li><a href="https://github.com/parkerhendry/projects" class="icon brands fa-github"> Projects</a></li>
-							
-							</ul>
-						
-						</nav>
-					</header>
+        /* Smooth scrolling and custom scrollbar */
+        html {
+            scroll-behavior: smooth;
+        }
+        body::-webkit-scrollbar {
+            width: 10px;
+        }
+        body::-webkit-scrollbar-track {
+            background: var(--light-color);
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 20px;
+        }
 
+        /* Navbar */
+        .navbar {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            background-color: rgba(52, 73, 94, 0.9);
+        }
+        .navbar-scrolled {
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
 
-					<div id="main">
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 150px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at top left, rgba(255,255,255,0.2), transparent 50%),
+                radial-gradient(circle at bottom right, rgba(255,255,255,0.2), transparent 50%);
+        }
 
-						<!-- About Section -->
-							<article id="about">
-								<h2 class="major">About</h2>
+        /* Project Cards */
+        .project-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
 
-								<span class="image main"><img src="images/new.jpeg" alt="" /></span>
-								
-								<!--<span><img src="https://twemoji.maxcdn.com/v/latest/svg/1f44b.svg" width="25" height="25" alt="👋" loading="lazy"></span>-->
-								<span>Hi!</span>
-								<p>My name is Parker Hendry, and I'm a software developer! With a deep-seated passion for Computer Science and Mathematics—my major and minor—I'm currently pursuing my dream.</p>
-								<p>To learn more about my skills and qualifications, check out my <a href="Resume.pdf">resume</a>.</p>
-								<p>Here are some examples of <a href="https://github.com/parkerhendry/projects">projects that I have completed</a>.</p>
-							</article>
+        /* Skills Section */
+        .skills-section {
+            background-color: var(--light-color);
+        }
+        .skill-category {
+            margin-bottom: 30px;
+        }
+        .skill-badge {
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .skill-badge:hover {
+            transform: scale(1.1);
+        }
 
+        /* Timeline for Experience */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .timeline-content {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-						<!-- Contact Information -->
-						<article id="contact">
-						
-										<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Type</th>
-													<th>Info</th>
-													
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Email</td>
-													<td>parkerhendry1@gmail.com</td>
-													
-												</tr>
-												<tr>
-													<td>Phone</td>
-													<td>803-280-7996</td>
-													
-												</tr>
-																								<tr>
-													<td>GitHub</td>
-													<td>parkerhendry</td>
-													
-												</tr>
-												<tr>
-													<td>Handshake Profile</td>
-													<td><a href="https://app.joinhandshake.com/stu/users/33789239">Click Me</a></td>
-													
-												</tr>	
-												<tr>
-													<td>LinkedIn Profile</td>
-													<td><a href="https://www.linkedin.com/in/parker-hendry-a53715287">Click Me</a></td>
-													
-												</tr>											
-											</tbody>
-										</table>
-										</div>					
-						
-						</article>
+        /* Certificates Section */
+        .certificate-card {
+            transition: all 0.3s ease;
+            background-color: white;
+            border: none;
+        }
+        .certificate-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
 
-					</div>
+        /* Subtle Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Parker Hendry's Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-					<footer>
-					</footer>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <img src="images/new.jpeg" alt="Parker Hendry" 
+                         class="rounded-circle mb-4 animate__animated animate__fadeIn" 
+                         style="width: 200px; height: 200px; object-fit: cover;">
+                    <h1 class="display-4 animate__animated animate__fadeInUp">Parker Hendry</h1>
+                    <p class="lead animate__animated animate__fadeInUp">Integration Specialist @ Traxxis GPS Solutions</p>
+                    <div class="social-links mt-4">
+                        <a href="https://github.com/parkerhendry" class="btn btn-outline-light me-2 animate__animated animate__fadeInLeft" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/parker-hendry-a53715287" class="btn btn-outline-light animate__animated animate__fadeInRight" target="_blank">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			</div>
+    <!-- About Section -->
+    <section id="about" class="py-5 animate-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-5">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p class="lead">
+                        I am a dedicated and detail-oriented Integration Specialist with a B.S. in Computer Science from Winthrop University (Class of 2024). I specialize in developing custom Geotab add-in web applications using Python, JavaScript, HTML, and CSS, leveraging the Geotab API and SDK to create seamless integrations. Passionate about creating seamless integrations, I work closely with customers to design, develop, and optimize solutions that improve efficiency, security, and user experience. 
+                    </p>
+                    <p>
+                        With a strong foundation in software development and system integration, I am always eager to tackle new challenges and drive innovation in the field.
+                    </p>
+                    <div class="mt-4">
+                        <a href="Resume.pdf" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-file-download"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="bg-light p-4 rounded">
+                        <h4>Personal Details</h4>
+                        <ul class="list-unstyled">
+                            <li><strong>Location:</strong> South Carolina, USA</li>
+                            <li><strong>Education:</strong> B.S. Computer Science</li>
+                            <li><strong>Current Role:</strong> Integration Specialist</li>
+                            <li><strong>Interests:</strong> Web Development, AI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<!--Background -->
-			<div id="bg"></div>
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-5 bg-light animate-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-5">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Integration Specialist</h4>
+                        <p class="text-muted">Traxxis GPS Solutions | Current</p>
+                        <p>I design, develop, and implement custom Geotab add-in web applications using Python, JavaScript, HTML, and CSS, leveraging the Geotab API and SDK to enhance fleet management capabilities. By collaborating closely with customers, I deliver tailored solutions that integrate seamlessly with the Geotab ecosystem. My focus is on optimizing application performance, security, and usability to ensure a smooth user experience. Additionally, I maintain and troubleshoot existing add-ins, improving functionality and resolving issues to meet evolving business needs.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Software Developer - AI Trainer</h4>
+                        <p class="text-muted">DataAnnotationTech | Apr 2024 - Feb 2025</p>
+                        <p>I train AI chatbots to program in various languages, including Python, Java, JavaScript, Bash, SQL, C, C++, and more. I develop advanced and diverse problem sets designed to challenge and enhance the chatbots' programming abilities. Additionally, I evaluate their performance, providing revisions and feedback to improve their accuracy and efficiency.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Software Development Intern</h4>
+                        <p class="text-muted">Catawba Area Agency on Aging | Aug 2022 - May 2023</p>
+                        <p>I developed a WPF application called Root Works using C#, XAML, MySQL, and Visual Studio to manage client information for a local non-profit organization. The application provides a range of features, including importing and exporting data to and from Excel spreadsheets, as well as functionalities for searching, editing, and managing client records efficiently.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 animate-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-5">Featured Projects</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Fleet Speed Violation Reporting & Automation Dashboard</h5>
+                            <p class="card-text">A web-based reporting dashboard that integrates with the Geotab API to fetch and analyze speeding violations across a fleet. Users can generate detailed reports, map violations to cost centers, and automate daily email reports with professionally styled HTML emails. The dashboard is built with Python, HTML/CSS, and JavaScript for seamless interaction and data visualization.</p>
+                            <a href="https://github.com/parkerhendry/projects/tree/master/Geotab/SpeedingViolations" class="btn btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Geotab Project Coming Soon!</h5>
+                            <p class="card-text">Check back soon for more Geotab projects.</p>
+                            <a href="https://github.com/parkerhendry/projects" class="btn btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Geotab Project Coming Soon!</h5>
+                            <p class="card-text">Check back soon for more Geotab projects.</p>
+                            <a href="https://github.com/parkerhendry/projects" class="btn btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="https://github.com/parkerhendry/projects" class="btn btn-dark" target="_blank">
+                    <i class="fab fa-github"></i> Explore All Projects
+                </a>
+            </div>
+        </div>
+    </section>
 
-	</body>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section py-5 animate-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-5">Technical Skills</h2>
+            <div class="row">
+                <div class="col-md-4 skill-category">
+                    <h4 class="text-center">Programming Languages</h4>
+                    <div class="text-center">
+                        <span class="badge bg-primary skill-badge">Python</span>
+                        <span class="badge bg-secondary skill-badge">JavaScript</span>
+                        <span class="badge bg-success skill-badge">Java</span>
+                        <span class="badge bg-danger skill-badge">C++</span>
+                    </div>
+                </div>
+                <div class="col-md-4 skill-category">
+                    <h4 class="text-center">Web Technologies</h4>
+                    <div class="text-center">
+                        <span class="badge bg-info skill-badge">HTML5</span>
+                        <span class="badge bg-warning skill-badge">CSS3</span>
+                        <span class="badge bg-primary skill-badge">React</span>
+                        <span class="badge bg-dark skill-badge">Node.js</span>
+                    </div>
+                </div>
+                <div class="col-md-4 skill-category">
+                    <h4 class="text-center">Tools & Platforms</h4>
+                    <div class="text-center">
+                        <span class="badge bg-secondary skill-badge">Git</span>
+                        <span class="badge bg-success skill-badge">Docker</span>
+                        <span class="badge bg-warning skill-badge">AWS</span>
+                        <span class="badge bg-info skill-badge">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-5 bg-light animate-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-5">Certifications</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card certificate-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-certificate text-primary mb-3" style="font-size: 3rem;"></i>
+                            <h5>AWS Certified</h5>
+                            <p class="text-muted">AWS Certified Developer - Associate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card certificate-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-code text-success mb-3" style="font-size: 3rem;"></i>
+                            <h5>More certifications coming soon!</h5>
+                            <p class="text-muted">Check back soon for more certs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card certificate-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-laptop-code text-info mb-3" style="font-size: 3rem;"></i>
+                            <h5>More certifications coming soon!</h5>
+                            <p class="text-muted">Check back soon for more certs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-dark text-white animate-on-scroll">
+        <div class="container">
+            <h2 class="text-center mb-5">Get in Touch</h2>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card bg-secondary">
+                        <div class="card-body">
+                            <div class="contact-info text-center">
+                                <p><strong>Email:</strong> parkerhendry1@gmail.com</p>
+                                <p><strong>Phone:</strong> 803-280-7996</p>
+                                <div class="social-links mt-4">
+                                    <a href="https://github.com/parkerhendry/projects" class="btn btn-outline-light me-2" target="_blank">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/parker-hendry-a53715287" class="btn btn-outline-light me-2" target="_blank">
+                                        <i class="fab fa-linkedin"></i> LinkedIn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>&copy; 2024 Parker Hendry. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scrolling effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+
+        // Animate on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        const sections = document.querySelectorAll('.animate-on-scroll');
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
 </html>
