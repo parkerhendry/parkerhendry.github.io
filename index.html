@@ -1779,7 +1779,7 @@
                     <p>A fully featured social media web app with user authentication, posting, profile management, search, likes, dislikes, and comments. All data stored and fetched from MongoDB via Mongoose. Built end-to-end with Node, Express, Pug, and Bootstrap.</p>
                     <div class="project-footer">
                         <span class="project-badge">Open Source</span>
-                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                        <a href="https://github.com/parkerhendry/projects/tree/master/Parkerbook" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
                     </div>
                 </div>
             </div>
@@ -1804,7 +1804,7 @@
                     <p>A secure full-stack WPF desktop app for storing passwords. Uses bcrypt for master password hashing and AES-256 (key derived from master password) for stored password encryption. SecureStrings minimize plaintext exposure, parameterized SQL queries prevent injection attacks, and passwords are never displayed directly — only copyable via a button that clears memory immediately after.</p>
                     <div class="project-footer">
                         <span class="project-badge">Open Source</span>
-                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                        <a href="https://github.com/parkerhendry/projects/tree/master/PasswordManager" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
                     </div>
                 </div>
             </div>
@@ -1828,7 +1828,7 @@
                     <p>A peer-to-peer application built with socket programming in C. Each node acts as both server and client simultaneously using pthreads for multithreading. Once connected via IP address, nodes can invoke remote shell commands, share files, and change directories — with support for most standard shell commands.</p>
                     <div class="project-footer">
                         <span class="project-badge">Open Source</span>
-                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                        <a href="https://github.com/parkerhendry/projects/tree/master/P2P" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
                     </div>
                 </div>
             </div>
@@ -1852,7 +1852,7 @@
                     <p>A custom Unix shell implementation in C supporting both built-in commands and fallback to Bash. Catches interrupt signals, records full command history (printed on exit), tracks the current working directory in the prompt, and features a "hiMom" command that forks a child process and communicates with it over a pipe.</p>
                     <div class="project-footer">
                         <span class="project-badge">Open Source</span>
-                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                        <a href="https://github.com/parkerhendry/projects/tree/master/CustomShell" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
                     </div>
                 </div>
             </div>
@@ -1875,7 +1875,7 @@
                     <p>A probabilistic machine learning classifier that labels mushroom instances as edible or poisonous using Bayes' theorem across attribute combinations. Supports m-estimates as virtual samples to handle zero-frequency issues. Achieves 99.7% accuracy on training data and 99.5% on testing data.</p>
                     <div class="project-footer">
                         <span class="project-badge">Open Source</span>
-                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                        <a href="https://github.com/parkerhendry/projects/tree/master/NaiveBayes" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
                     </div>
                 </div>
             </div>
@@ -1899,7 +1899,7 @@
                     <p>An implementation of the EM k-means clustering algorithm (unsupervised ML). Accepts user-defined k (centroids) and σ values, evaluates clustering quality using the Davies-Bouldin Index, and plots the final clusters for visual analysis.</p>
                     <div class="project-footer">
                         <span class="project-badge">Open Source</span>
-                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                        <a href="https://github.com/parkerhendry/projects/tree/master/EMClustering" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
                     </div>
                 </div>
             </div>
@@ -1923,7 +1923,7 @@
                     <p>A text message-based high-low guessing game using Express and the Twilio API. Each inbound SMS triggers an HTTP POST to the Express server, which generates the appropriate game response and sends it back via Twilio — a clean example of webhook-driven application logic.</p>
                     <div class="project-footer">
                         <span class="project-badge">Open Source</span>
-                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                        <a href="https://github.com/parkerhendry/projects/tree/master/SMSHighLow" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
                     </div>
                 </div>
             </div>
@@ -2125,14 +2125,14 @@
         <div class="footer-links">
             <a href="https://github.com/parkerhendry/projects" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/parker-hendry-a53715287" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="/cdn-cgi/l/email-protection#ddadbcafb6b8afb5b8b3b9afa4ec9dbab0bcb4b1f3beb2b0"><i class="far fa-envelope"></i></a>
+            <a href="mailto:parkerhendry1@gmail.com"><i class="far fa-envelope"></i></a>
         </div>
     </div>
 </footer>
 
 <a href="#home" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
     // Nav toggle
     function toggleNav() {
         document.getElementById('navLinks').classList.toggle('open');
@@ -2160,4 +2160,37 @@
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.fade-in').for
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Skill bar animation
+    const barObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+                    bar.style.width = bar.dataset.width + '%';
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.radar-card').forEach(el => barObserver.observe(el));
+
+    // Project filtering
+    function filterProjects(category, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.project-card').forEach(card => {
+            if (category === 'all') {
+                card.classList.remove('hidden');
+            } else {
+                if (card.dataset.category === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>
