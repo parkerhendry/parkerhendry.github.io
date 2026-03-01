@@ -804,6 +804,42 @@
 
         .project-link:hover { color: var(--accent); }
 
+        /* ── PROJECT FILTERS ── */
+        .project-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 7px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.04em;
+        }
+
+        .filter-btn:hover {
+            color: var(--accent);
+            border-color: rgba(74,158,255,0.3);
+        }
+
+        .filter-btn.active {
+            color: var(--accent);
+            background: var(--glow);
+            border-color: rgba(74,158,255,0.3);
+        }
+
+        .project-card.hidden {
+            display: none;
+        }
+
         /* ── SKILLS ── */
         #skills { background: var(--bg2); }
 
@@ -1482,11 +1518,18 @@
     <div class="container">
         <div class="section-label">My Work</div>
         <h2 class="section-heading">Things I've <em>built.</em></h2>
-        <p class="section-sub">13 applications deployed to production. Here are some highlights — Traxxis projects are shown without source code as they are proprietary.</p>
+        <p class="section-sub">13 applications deployed to production. Traxxis projects are shown without source code as they are proprietary.</p>
+        <div class="project-filters">
+            <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
+            <button class="filter-btn" onclick="filterProjects('traxxis', this)">Traxxis GPS</button>
+            <button class="filter-btn" onclick="filterProjects('systems', this)">Systems & Infrastructure</button>
+            <button class="filter-btn" onclick="filterProjects('web', this)">Web & Full-Stack</button>
+            <button class="filter-btn" onclick="filterProjects('ml', this)">Machine Learning</button>
+        </div>
         <div class="projects-grid">
 
             <!-- Featured: Job Router -->
-            <div class="project-card featured fade-in">
+            <div class="project-card featured fade-in" data-category="traxxis">
                 <div class="project-img">
                     <div class="project-img-placeholder">
                         <i class="fas fa-route"></i>
@@ -1510,7 +1553,7 @@
             </div>
 
             <!-- Yard Move Manager -->
-            <div class="project-card fade-in fade-in-delay-1">
+            <div class="project-card fade-in fade-in-delay-1" data-category="traxxis">
                 <div class="project-img">
                     <div class="project-img-placeholder">
                         <i class="fas fa-warehouse"></i>
@@ -1532,7 +1575,7 @@
             </div>
 
             <!-- Digital Matter Manager -->
-            <div class="project-card fade-in fade-in-delay-2">
+            <div class="project-card fade-in fade-in-delay-2" data-category="traxxis">
                 <div class="project-img">
                     <div class="project-img-placeholder">
                         <i class="fas fa-satellite-dish"></i>
@@ -1554,7 +1597,7 @@
             </div>
 
             <!-- DVIR Defect Notifier -->
-            <div class="project-card fade-in fade-in-delay-3">
+            <div class="project-card fade-in fade-in-delay-3" data-category="traxxis">
                 <div class="project-img">
                     <div class="project-img-placeholder">
                         <i class="fas fa-bell"></i>
@@ -1576,6 +1619,314 @@
             </div>
 
 
+
+            <!-- HOS Violation Notifier -->
+            <div class="project-card fade-in fade-in-delay-1" data-category="traxxis">
+                <div class="project-img">
+                    <div class="project-img-placeholder">
+                        <i class="fas fa-clock"></i>
+                        <span>Screenshot Coming Soon</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Geotab API</span>
+                        <span class="project-tag">Automation</span>
+                    </div>
+                    <h4>HOS Violation Notifier</h4>
+                    <p>Monitors driver Hours of Service data via the Geotab API and automatically emails fleet managers when a driver is approaching an HOS time limit violation — giving them time to act before a compliance breach occurs.</p>
+                    <div class="project-footer">
+                        <span class="project-badge">Proprietary · Traxxis GPS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal Zone Manager -->
+            <div class="project-card fade-in fade-in-delay-2" data-category="traxxis">
+                <div class="project-img">
+                    <div class="project-img-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Screenshot Coming Soon</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Geotab API</span>
+                        <span class="project-tag">Automation</span>
+                    </div>
+                    <h4>Terminal Zone Manager</h4>
+                    <p>Emails fleet managers in real time when a driver enters or exits a defined terminal zone, using the Geotab API for zone and location tracking. Keeps operations teams informed without requiring them to monitor the platform manually.</p>
+                    <div class="project-footer">
+                        <span class="project-badge">Proprietary · Traxxis GPS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geotab / Ruckit Sync -->
+            <div class="project-card fade-in fade-in-delay-3" data-category="traxxis">
+                <div class="project-img">
+                    <div class="project-img-placeholder">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>Screenshot Coming Soon</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Geotab API</span>
+                        <span class="project-tag">Ruckit API</span>
+                        <span class="project-tag">Scheduled Jobs</span>
+                    </div>
+                    <h4>Geotab ↔ Ruckit Location Sync</h4>
+                    <p>A scheduled service that runs at regular intervals to detect and reconcile location discrepancy data between the Geotab and Ruckit platforms, keeping both systems in sync without manual data entry.</p>
+                    <div class="project-footer">
+                        <span class="project-badge">Proprietary · Traxxis GPS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resource Hub -->
+            <div class="project-card fade-in fade-in-delay-1" data-category="traxxis">
+                <div class="project-img">
+                    <div class="project-img-placeholder">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Screenshot Coming Soon</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Flask</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Access Control</span>
+                    </div>
+                    <h4>Internal Resource Hub</h4>
+                    <p>A company-wide internal website providing centralized, easy access to company resources with role-based access control — ensuring the right people can access the right materials without friction.</p>
+                    <div class="project-footer">
+                        <span class="project-badge">Proprietary · Traxxis GPS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Automated Report Generation -->
+            <div class="project-card fade-in fade-in-delay-2" data-category="traxxis">
+                <div class="project-img">
+                    <div class="project-img-placeholder">
+                        <i class="fas fa-file-export"></i>
+                        <span>Screenshot Coming Soon</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Geotab API</span>
+                        <span class="project-tag">SFTP</span>
+                        <span class="project-tag">Email Automation</span>
+                        <span class="project-tag">openpyxl</span>
+                    </div>
+                    <h4>Automated Report Generation Suite</h4>
+                    <p>A suite of report generation applications that pull fleet data via the Geotab API and automatically deliver customized reports to customers via email, SFTP server, and other channels on a scheduled basis.</p>
+                    <div class="project-footer">
+                        <span class="project-badge">Proprietary · Traxxis GPS</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Linux Compute Cluster -->
+            <div class="project-card fade-in fade-in-delay-1" data-category="systems">
+                <div class="project-img">
+                    <div class="project-img-placeholder">
+                        <i class="fas fa-server"></i>
+                        <span>Infrastructure Project</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="project-tag">Linux</span>
+                        <span class="project-tag">Ansible</span>
+                        <span class="project-tag">Slurm</span>
+                        <span class="project-tag">Spack</span>
+                        <span class="project-tag">OpenMPI</span>
+                    </div>
+                    <h4>45-Node Linux Compute Cluster</h4>
+                    <p>Designed and built a full Linux compute cluster for student use at Winthrop University. Configured TFTP (network boot for all 45 nodes), a local HTTP apt mirror, NFS exports, and DHCP from a central management node. Used Ansible for configuration management, Spack to manage software stacks, and Slurm to schedule parallel jobs including OpenMPI workloads.</p>
+                    <div class="project-footer">
+                        <span class="project-badge">Winthrop University</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parkerbook -->
+            <div class="project-card fade-in fade-in-delay-2" data-category="web">
+                <div class="project-img">
+                    <div class="project-img-placeholder">
+                        <i class="fas fa-users"></i>
+                        <span>Screenshot Coming Soon</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="project-tag">Node.js</span>
+                        <span class="project-tag">Express</span>
+                        <span class="project-tag">MongoDB</span>
+                        <span class="project-tag">Pug</span>
+                        <span class="project-tag">Bootstrap</span>
+                    </div>
+                    <h4>Parkerbook — Full-Stack Social Media Site</h4>
+                    <p>A fully featured social media web app with user authentication, posting, profile management, search, likes, dislikes, and comments. All data stored and fetched from MongoDB via Mongoose. Built end-to-end with Node, Express, Pug, and Bootstrap.</p>
+                    <div class="project-footer">
+                        <span class="project-badge">Open Source</span>
+                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Password Manager WPF -->
+            <div class="project-card fade-in fade-in-delay-3" data-category="systems">
+                <div class="project-img">
+                    <div class="project-img-placeholder">
+                        <i class="fas fa-lock"></i>
+                        <span>Screenshot Coming Soon</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="project-tag">C#</span>
+                        <span class="project-tag">WPF / XAML</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">AES-256</span>
+                        <span class="project-tag">bcrypt</span>
+                    </div>
+                    <h4>Parker's Password Manager</h4>
+                    <p>A secure full-stack WPF desktop app for storing passwords. Uses bcrypt for master password hashing and AES-256 (key derived from master password) for stored password encryption. SecureStrings minimize plaintext exposure, parameterized SQL queries prevent injection attacks, and passwords are never displayed directly — only copyable via a button that clears memory immediately after.</p>
+                    <div class="project-footer">
+                        <span class="project-badge">Open Source</span>
+                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- P2P Application -->
+            <div class="project-card fade-in fade-in-delay-1" data-category="systems">
+                <div class="project-img">
+                    <div class="project-img-placeholder">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Systems Project</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="project-tag">C</span>
+                        <span class="project-tag">Socket Programming</span>
+                        <span class="project-tag">pthreads</span>
+                        <span class="project-tag">Multithreading</span>
+                    </div>
+                    <h4>P2P Network Application</h4>
+                    <p>A peer-to-peer application built with socket programming in C. Each node acts as both server and client simultaneously using pthreads for multithreading. Once connected via IP address, nodes can invoke remote shell commands, share files, and change directories — with support for most standard shell commands.</p>
+                    <div class="project-footer">
+                        <span class="project-badge">Open Source</span>
+                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Shell -->
+            <div class="project-card fade-in fade-in-delay-2" data-category="systems">
+                <div class="project-img">
+                    <div class="project-img-placeholder">
+                        <i class="fas fa-terminal"></i>
+                        <span>Systems Project</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="project-tag">C</span>
+                        <span class="project-tag">Linux</span>
+                        <span class="project-tag">POSIX</span>
+                        <span class="project-tag">Signals</span>
+                    </div>
+                    <h4>Custom Unix Shell</h4>
+                    <p>A custom Unix shell implementation in C supporting both built-in commands and fallback to Bash. Catches interrupt signals, records full command history (printed on exit), tracks the current working directory in the prompt, and features a "hiMom" command that forks a child process and communicates with it over a pipe.</p>
+                    <div class="project-footer">
+                        <span class="project-badge">Open Source</span>
+                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Naive Bayes Classifier -->
+            <div class="project-card fade-in fade-in-delay-3" data-category="ml">
+                <div class="project-img">
+                    <div class="project-img-placeholder">
+                        <i class="fas fa-brain"></i>
+                        <span>Machine Learning</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Naive Bayes</span>
+                        <span class="project-tag">Machine Learning</span>
+                    </div>
+                    <h4>Naive Bayes Mushroom Classifier</h4>
+                    <p>A probabilistic machine learning classifier that labels mushroom instances as edible or poisonous using Bayes' theorem across attribute combinations. Supports m-estimates as virtual samples to handle zero-frequency issues. Achieves 99.7% accuracy on training data and 99.5% on testing data.</p>
+                    <div class="project-footer">
+                        <span class="project-badge">Open Source</span>
+                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EM Clustering -->
+            <div class="project-card fade-in fade-in-delay-1" data-category="ml">
+                <div class="project-img">
+                    <div class="project-img-placeholder">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Machine Learning</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">EM Algorithm</span>
+                        <span class="project-tag">K-Means</span>
+                        <span class="project-tag">Matplotlib</span>
+                    </div>
+                    <h4>Expectation Maximization Clustering</h4>
+                    <p>An implementation of the EM k-means clustering algorithm (unsupervised ML). Accepts user-defined k (centroids) and σ values, evaluates clustering quality using the Davies-Bouldin Index, and plots the final clusters for visual analysis.</p>
+                    <div class="project-footer">
+                        <span class="project-badge">Open Source</span>
+                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SMS High-Low -->
+            <div class="project-card fade-in fade-in-delay-2" data-category="web">
+                <div class="project-img">
+                    <div class="project-img-placeholder">
+                        <i class="fas fa-sms"></i>
+                        <span>Screenshot Coming Soon</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="project-tag">Node.js</span>
+                        <span class="project-tag">Express</span>
+                        <span class="project-tag">Twilio</span>
+                        <span class="project-tag">Webhooks</span>
+                    </div>
+                    <h4>SMS High-Low Game</h4>
+                    <p>A text message-based high-low guessing game using Express and the Twilio API. Each inbound SMS triggers an HTTP POST to the Express server, which generates the appropriate game response and sends it back via Twilio — a clean example of webhook-driven application logic.</p>
+                    <div class="project-footer">
+                        <span class="project-badge">Open Source</span>
+                        <a href="https://github.com/parkerhendry/projects" target="_blank" class="project-link"><i class="fab fa-github"></i> View Code</a>
+                    </div>
+                </div>
+            </div>
 
         </div>
         <div style="text-align:center; margin-top: 40px;">
